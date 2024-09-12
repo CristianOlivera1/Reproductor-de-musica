@@ -9,6 +9,7 @@ navItems.forEach((navItem) => {
   });
 });
 
+
 const containers = document.querySelectorAll(".containers");
 
 containers.forEach((container) => {
@@ -191,4 +192,127 @@ var swiper = new Swiper(".swiper", {
     el: ".swiper-pagination",
   },
 });
-z
+// CONFIGURAR LA IMAGEN COMO DJ
+const albumCover = document.querySelector('.album-cover');
+const image = albumCover.querySelector('img');
+let isSpinning = false;
+let isDragging = false;
+let startAngle = 0;
+let currentRotation2 = 0;
+let rotationTimeout;
+
+// Convertir la rotación actual en grados
+function getRotationDegrees() {
+  const style = window.getComputedStyle(albumCover);
+  const matrix = new WebKitCSSMatrix(style.transform);
+  return Math.round(Math.atan2(matrix.m21, matrix.m11) * (180 / Math.PI));
+}
+
+// Iniciar la rotación automática y detenerla después de 2 segundos
+function startAutomaticRotation() {
+  albumCover.classList.add('rotating');
+  isSpinning = true;
+  clearTimeout(rotationTimeout); // Limpiar cualquier timeout previo
+  rotationTimeout = setTimeout(() => {
+    if (isSpinning) {
+      albumCover.classList.remove('rotating');
+      isSpinning = false;
+    }
+  }, 2000); // Detener la rotación después de 2 segundos
+}
+
+// Iniciar el arrastre con ratón o toque
+function startDragging(e) {
+  isDragging = true;
+  const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+  const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+  startAngle = Math.atan2(clientY - albumCover.getBoundingClientRect().top, clientX - albumCover.getBoundingClientRect().left) * (180 / Math.PI);
+  e.preventDefault(); // Prevenir selección de texto o zoom en dispositivos táctiles
+  albumCover.style.cursor = 'grabbing';
+  startAutomaticRotation(); // Iniciar la rotación automática al interactuar
+}
+
+// Actualizar la rotación durante el arrastre
+function rotateAlbumCover(e) {
+  if (isDragging) {
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    const currentAngle = Math.atan2(clientY - albumCover.getBoundingClientRect().top, clientX - albumCover.getBoundingClientRect().left) * (180 / Math.PI);
+    const deltaAngle = currentAngle - startAngle;
+    currentRotation2 = getRotationDegrees() + deltaAngle;
+    albumCover.style.transform = `rotate(${currentRotation2}deg)`;
+    startAngle = currentAngle;
+  }
+}
+
+// Detener el arrastre
+function stopDragging() {
+  if (isDragging) {
+    isDragging = false;
+    albumCover.style.cursor = 'grab'; // Restaurar el cursor
+  }
+}
+
+// Iniciar/Detener la rotación automática al hacer clic o tocar
+albumCover.addEventListener('click', () => {
+  if (!isSpinning) {
+    startAutomaticRotation();
+  } else {
+    albumCover.classList.remove('rotating');
+    isSpinning = false;
+    clearTimeout(rotationTimeout); // Limpiar el timeout si se detiene manualmente
+  }
+});
+
+// Controladores de ratón
+albumCover.addEventListener('mousedown', startDragging);
+window.addEventListener('mousemove', rotateAlbumCover);
+window.addEventListener('mouseup', stopDragging);
+
+// Controladores táctiles (para móviles)
+albumCover.addEventListener('touchstart', startDragging);
+window.addEventListener('touchmove', rotateAlbumCover);
+window.addEventListener('touchend', stopDragging);
+
+playPauseButton.addEventListener("click", playPause);
+
+//Buscador
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('songSearch');
+  const songContainer = document.querySelector('.song-container');
+
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase();
+    const songs = songContainer.querySelectorAll('.song');
+
+    songs.forEach(song => {
+      const title = song.querySelector('.song-title h2').textContent.toLowerCase();
+      const artist = song.querySelector('.song-title p').textContent.toLowerCase();
+      if (title.includes(query) || artist.includes(query)) {
+        song.style.display = '';
+      } else {
+        song.style.display = 'none';
+      }
+    });
+  });
+});
+
+//cambiar fondo
+document.addEventListener('DOMContentLoaded', function() {
+  const navItems = document.querySelectorAll('.nav-item');
+  const body = document.body;
+
+  navItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const bgNumber = this.getAttribute('data-bg');
+      body.classList.remove(
+        'background-1', 'background-2', 'background-3',
+        'background-4', 'background-5', 'background-6',
+        'background-7', 'background-8', 'background-9',
+        'background-10', 'background-11', 'background-12',
+        'background-13', 'background-14', 'background-15'
+      );
+      body.classList.add(`background-${bgNumber}`);
+    });
+  });
+});

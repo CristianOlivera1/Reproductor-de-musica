@@ -39,9 +39,61 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url(resources/img/fondo.jpg);
+  background-image: url(https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/*Cambiar fondos*/
+/* Fondos en CSS */
+.background-1 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.background-2 {
+  background-image: url('https://github.com/CristianOlivera1/Grafos_Ciudad/raw/main/resources/video.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.background-3 {
+  background-image: url('https://github.com/CristianOlivera1/Grafos_Ciudad/assets/171596250/4b1902da-f6c5-42ce-a926-30b660247d3c.mp4');
+}
+.background-4 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo4.jpg');
+}
+.background-5 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo5.jpg');
+}
+.background-6 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo6.jpg');
+}
+.background-7 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo1.jpg');
+}
+.background-8 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo2.jpg');
+}
+.background-9 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo3.jpg');
+}
+.background-10 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo4.jpg');
+}
+.background-11 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo5.jpg');
+}
+.background-12 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo6.jpg');
+}
+.background-13 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo6.jpg');
+}
+.background-14 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo6.jpg');
+}
+.background-15 {
+  background-image: url('https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/fondo6.jpg');
 }
 
 /* MAIN MENU */
@@ -69,10 +121,68 @@ main {
   font-family: inherit;
 }
 
+/*perfil animado*/
 .user-info img {
-  padding: 12px 24px 6px;
+  width: 125%;
   border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  top: -3px;
+
 }
+
+.image-container {
+  height: 70px;
+  /* Ajusta según el tamaño de tu imagen */
+  width: 70px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  /* Evita que el pseudo-elemento se vea fuera del contenedor */
+  left: 3px;
+  margin-bottom: 10px;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  /* Ajusta según sea necesario */
+  width: 100%;
+  background-image: conic-gradient(rgb(255, 255, 255) 20deg, transparent 120deg);
+  animation: rotar 2s linear infinite;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+@keyframes rotar {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.image-container::after {
+  content: "";
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  background-color: rgba(16, 16, 16, 0.8);
+  /* Hacemos el fondo semitransparente */
+  border-radius: 50%;
+  box-shadow: inset 16px 14px 20px rgba(0, 0, 0, 0.55);
+  /* Ajustamos la sombra */
+  z-index: 1;
+  /* Aseguramos que esto esté detrás de la imagen */
+}
+
+/*perfil animado*/
 
 .user-info p {
   color: #fff;
@@ -81,6 +191,15 @@ main {
   text-align: center;
   line-height: 1;
   padding: 0 6px 32px;
+}
+
+#apellido {
+  color: #fff;
+  font-size: 14.5px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1;
+  margin-top: -25px;
 }
 
 .nav-item {
@@ -97,13 +216,19 @@ main {
   margin: 0 8px;
   border-radius: 5px;
 }
+
 .line-number {
   display: inline-block;
-  width: 20px; /* Ancho fijo para alinear los números */
-  text-align: right; /* Alineación a la derecha */
-  margin-right: 8px; /* Espacio entre el número y el texto */
-  color: gray; /* Color del número de línea */
-  font-family: monospace; /* Fuente de ancho fijo */
+  width: 20px;
+  /* Ancho fijo para alinear los números */
+  text-align: right;
+  /* Alineación a la derecha */
+  margin-right: 8px;
+  /* Espacio entre el número y el texto */
+  color: gray;
+  /* Color del número de línea */
+  font-family: monospace;
+  /* Fuente de ancho fijo */
 }
 
 .nav-item.active a {
@@ -141,20 +266,27 @@ main {
 
 /* SLIDER */
 .icon {
-  font-size: 18px; /* Tamaño del icono */
-  margin-right: 10px; /* Espacio entre los iconos */
-  padding-bottom: 15px; /* Espacio entre el icono y el texto */
+  font-size: 18px;
+  /* Tamaño del icono */
+  margin-right: 10px;
+  /* Espacio entre los iconos */
+  padding-bottom: 15px;
+  /* Espacio entre el icono y el texto */
 
 }
+
 .red {
   color: red;
 }
+
 .yellow {
   color: yellow;
 }
+
 .green {
   color: rgb(13, 192, 13);
 }
+
 .slider-container {
   margin: 0 auto;
   width: 100%;
@@ -205,12 +337,10 @@ main {
   inset: 0;
   width: 100%;
   height: 98%;
-  background: linear-gradient(
-    240deg,
-    transparent,
-    transparent,
-    rgba(38, 21, 149, 0.8)
-  );
+  background: linear-gradient(240deg,
+      transparent,
+      transparent,
+      rgba(38, 21, 149, 0.8));
   border-radius: 20px;
   padding: 30px;
 }
@@ -389,6 +519,62 @@ main {
 }
 
 /* RIGHT CONTENT */
+/*buscador*/
+.search-bar {
+  position: absolute;
+  /* Cambiado a relative para no afectar el flujo del contenido */
+  padding: 0 28px;
+  margin-bottom: 20px;
+
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background-color: transparent;
+  /* Fondo transparente */
+  color: #fff;
+  /* Color del texto */
+  box-shadow: none;
+  /* Elimina sombra predeterminada */
+  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra ligera */
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  /* Color del texto del placeholder */
+}
+
+.search-bar input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Fondo ligeramente blanco al enfocar */
+  outline: none;
+  /* Elimina el borde por defecto */
+  color: #ffffff;
+}
+
+.search-icon {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  /* Ajusta la alineación vertical */
+  color: rgba(255, 255, 255, 0.6);
+  /* Color del ícono */
+  font-size: 20px;
+  /* Tamaño del ícono */
+  pointer-events: none;
+  /* Evita que el ícono interfiera con el clic en el campo de búsqueda */
+}
+
+/*buscador*/
 
 .right-content {
   display: grid;
@@ -404,12 +590,17 @@ main {
 
 /* SONGS */
 .recommended-songs {
-  height: 600px; /*tamaño del scroll*/
-  max-height: 700px; /* Ajusta la altura según sea necesario */
-  overflow-y: auto; /* Habilita el scroll vertical */
-  overflow-x: auto; /* Habilita el scroll horizontal */
+  height: 600px;
+  /*tamaño del scroll*/
+  max-height: 700px;
+  /* Ajusta la altura según sea necesario */
+  overflow-y: auto;
+  /* Habilita el scroll vertical */
+  overflow-x: auto;
+  /* Habilita el scroll horizontal */
   width: 280px;
   padding-right: 10px;
+  margin-top: 30px;
 }
 
 .recommended-songs h1 {
@@ -478,25 +669,27 @@ main {
 
 /* Personalización del scrollbar */
 .recommended-songs::-webkit-scrollbar {
-  width: 7px; /* Ancho del scrollbar */
+  width: 7px;
+  /* Ancho del scrollbar */
 }
 
 .recommended-songs::-webkit-scrollbar-track {
-  background: transparent; /* Fondo del track */
+  background: transparent;
+  /* Fondo del track */
 }
 
 .recommended-songs::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(9,30,121,0.8631827731092436) 0%, rgba(250,251,2,1) 0%, rgba(191,30,253,1) 38%, rgba(38,231,254,1) 62%, rgba(166,48,255,1) 86%);  border-radius: 10px; /* Bordes redondeados del thumb */
-
+  background: linear-gradient(180deg, red 0%, yellow 50%, rgb(13, 192, 13) 100%);
 }
 
 .recommended-songs::-webkit-scrollbar-thumb:hover {
-  background: darkcyan; /* Color del thumb al pasar el mouse */
+  background: darkcyan;
+  /* Color del thumb al pasar el mouse */
 }
 
- /*MUSIC PLAYER*/
+/*MUSIC PLAYER*/
 
- .music-player {
+.music-player {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -520,11 +713,13 @@ main {
   width: 100%;
 }
 
+/* dar giros como dj*/
 .album-cover {
   position: relative;
   margin-right: -50px;
+  cursor: grab;
+  /* Indica que el elemento es arrastrable */
 }
-
 
 .album-cover img {
   border-radius: 50%;
@@ -535,10 +730,25 @@ main {
   box-shadow: 0 10px 60px rgba(200, 187, 255, 0.175);
   transition: transform 0.5s ease-out;
   pointer-events: none;
+  /* Para que el click funcione solo en el contenedor */
   user-select: none;
- 
 }
 
+.rotating img {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* dar giros como dj*/
 .point {
   position: absolute;
   top: 50%;
@@ -581,12 +791,14 @@ main {
 #progress {
   appearance: none;
   -webkit-appearance: none;
-  width: 60%; /* Ajusta el ancho según sea necesario */
+  width: 60%;
+  /* Ajusta el ancho según sea necesario */
   height: 6px;
   background: rgba(200, 187, 255, 0.6);
   border-radius: 4px;
   cursor: pointer;
-  margin: 0 10px; /* Espacio entre el tiempo y el control deslizante */
+  margin: 0 10px;
+  /* Espacio entre el tiempo y el control deslizante */
 }
 
 #progress::-webkit-slider-thumb {
@@ -690,7 +902,7 @@ main {
   .album-frame {
     width: 160px;
   }
-  
+
   .song {
     grid-template-columns: 29% auto 10%;
   }
@@ -732,8 +944,8 @@ main {
   .album-frame {
     width: 130px;
   }
-  
-   .song {
+
+  .song {
     grid-template-columns: 26% auto 10%;
   }
 
@@ -780,11 +992,11 @@ main {
   .right-content {
     grid-template-rows: 55% 45%;
   }
-   
+
   .song {
     grid-template-columns: 30% auto 12%;
   }
-  
+
   .song:nth-child(7) {
     display: none;
   }
@@ -860,8 +1072,8 @@ main {
     grid-template-rows: 60% 40%;
     row-gap: 16px;
   }
-  
-   .song {
+
+  .song {
     grid-template-columns: 18% auto 8%;
   }
 
@@ -896,9 +1108,14 @@ main {
   .album-frame {
     width: 100px;
   }
-  
-   .song {
+
+  .song {
     grid-template-columns: 23% auto 8%;
+  }
+
+  .album-cover img {
+    width: 30px;
+    height: auto;
   }
 }
 
@@ -916,8 +1133,8 @@ main {
     row-gap: 8px;
     padding: 12px 36px;
   }
-  
-   .song {
+
+  .song {
     grid-template-columns: 25% auto 8%;
   }
 }

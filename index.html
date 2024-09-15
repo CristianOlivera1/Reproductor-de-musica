@@ -10,57 +10,59 @@
   <meta name="theme-color" content="#AA00D6">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'>
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css'>
-  <link rel="stylesheet" href="./style.css">
-
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- partial:index.partial.html -->
-
 <body>
+
+  <!-- Loader solo para celulares -->
+  <div class="fullscreen-loader" id="loader">
+    <div class="wave-animation"></div>
+    <div class="animated-finger"></div>
+  </div>
   <main>
     <nav class="main-menu">
       <div>
         <div class="user-info">
           <a href="https://github.com/CristianOlivera1" target="_blank">
             <div class="image-container">
-              <img src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/i_perfil.png"
+              <img src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/i_perfil2.png"
                 alt="user" />
             </div>
           </a>
-          <p>Cristian</p>
+          <p class="amarillo">Cristian</p>
           <p id="apellido">Olivera</p>
         </div>
 
         <ul>
-          <li class="nav-item" data-bg="1">
+          <li class="nav-item active" data-bg="1">
             <a href="#">
               <span class="line-number">1</span>
               <span class="nav-text">Discover</span>
             </a>
           </li>
-        
+
           <li class="nav-item" data-bg="2">
             <a href="#">
               <span class="line-number">2</span>
               <span class="nav-text">Trending</span>
             </a>
           </li>
-        
+
           <li class="nav-item" data-bg="3">
             <a href="#">
               <span class="line-number">3</span>
               <span class="nav-text">Album</span>
             </a>
           </li>
-        
+
           <li class="nav-item" data-bg="4">
             <a href="#">
               <span class="line-number">4</span>
               <span class="nav-text">Playlist</span>
             </a>
           </li>
-        
+
           <li class="nav-item" data-bg="5">
             <a href="#">
               <span class="line-number">5</span>
@@ -68,7 +70,7 @@
             </a>
           </li>
         </ul>
-        
+
         <ul>
           <li class="nav-item" data-bg="6">
             <a href="#">
@@ -76,14 +78,14 @@
               <span class="nav-text">Profile</span>
             </a>
           </li>
-        
+
           <li class="nav-item" data-bg="7">
             <a href="#">
               <span class="line-number">7</span>
               <span class="nav-text">Settings</span>
             </a>
           </li>
-        
+
           <li class="nav-item" data-bg="8">
             <a href="#">
               <span class="line-number">8</span>
@@ -119,7 +121,7 @@
             </a>
           </li>
 
-        <li class="nav-item" data-bg="13">
+          <li class="nav-item" data-bg="13">
             <a href="#">
               <span class="line-number">13</span>
               <span class="nav-text">Logout</span>
@@ -150,619 +152,1338 @@
             <i class="fas fa-circle icon red"></i>
             <i class="fas fa-circle icon yellow"></i>
             <i class="fas fa-circle icon green"></i>
-          </div>
-          <h1>Lista de reproducción popular</h1>
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/95b52c32-f5da-4fe6-956d-a5ed118bbdd2" />
-                <div class="slide-overlay">
-                  <h2>Midnight Moods</h2>
-                  <button>
-                    Listen Now <i class="fa-solid fa-circle-play"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/6ddf81f5-2689-4f34-bf80-a1e07f14621c" />
-                <div class="slide-overlay">
-                  <h2>Party Starters</h2>
-                  <button>
-                    Listen Now <i class="fa-solid fa-circle-play"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/ab52d9d0-308e-43e0-a577-dce35fedd2a3" />
-                <div class="slide-overlay">
-                  <h2>Relaxing Tones</h2>
-                  <button>
-                    Listen Now <i class="fa-solid fa-circle-play"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/20c8fdd5-9f4a-4917-ae90-0239a52e8334" />
-                <div class="slide-overlay">
-                  <h2>Smooth Jazz Journey</h2>
-                  <button>
-                    Listen Now <i class="fa-solid fa-circle-play"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <img
-                  src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/df461a99-2fb3-4d55-ac16-2e0c6dd783e1" />
-                <div class="slide-overlay">
-                  <h2>Uplifting Rhythms</h2>
-                  <button>
-                    Listen Now <i class="fa-solid fa-circle-play"></i>
-                  </button>
-                </div>
-              </div>
+            <div class="linea">
+              <h1>Lista de <h1 class="amarillo"> reproducción popular</h1>
+              </h1>
             </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-
-        <div class="right-content">
-          <!-- Buscador -->
-          <div class="search-bar">
-            <input type="text" id="songSearch" />
-            <i class="fa fa-search search-icon" aria-hidden="true"></i>
-          </div>
-          <div class="recommended-songs">
-            <h1>Canciones recomendadas</h1>
-            <div class="song-container">
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/6ix9ine%20-%20Shaka%20Laka%20(feat.%20Kodak%20Black%20%26%20Yailin%20la%20Mas%20Viral)%20(Official%20Music%20Video).mp3">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
                   <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
+                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/airbag.jpg" />
+                  <div class="slide-overlay">
+                    <h2>Airbag</h2>
+                    <button id="uno">
+                      Escuchar ahora <i class="fa-solid fa-circle-play"></i>
+                    </button>
                   </div>
                 </div>
-                <div class="song-title">
-                  <h2>Shaka Laka</h2>
-                  <p>6ix9ine</p>
-                </div>
-                <span>2:56</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/%E2%80%A2%20Cicatrices%20-%20AIRBAG%20__%20Letra%20_%20HD%20-%20Mariel%20%E2%98%85.mp3">
+                <div class="swiper-slide">
                   <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
+                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/can2.jpg" />
+                  <div class="slide-overlay">
+                    <h2>Canserbero</h2>
+                    <button id="dos">
+                      Escuchar ahora <i class="fa-solid fa-circle-play"></i>
+                    </button>
                   </div>
                 </div>
-                <div class="song-title">
-                  <h2>Cicatrices</h2>
-                  <p>Airbag</p>
-                </div>
-                <span>3:48</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/C.R.O%20%20BZRP%20Music%20Sessions%2029.mp3">
+                <div class="swiper-slide">
                   <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
+                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/emine.jpg" />
+                  <div class="slide-overlay">
+                    <h2>Eminem</h2>
+                    <button id="tres">
+                      Escuchar ahora <i class="fa-solid fa-circle-play"></i>
+                    </button>
                   </div>
                 </div>
-                <div class="song-title">
-                  <h2>BZRP Music Sessions 29</h2>
-                  <p>C.R.O</p>
-                </div>
-                <span>2:29</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Cans%C3%A9r%20cxp.mp3">
+                <div class="swiper-slide">
                   <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
+                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/f916dae8cd3a4ed91bbdc5f485cfe9d3.jpg" />
+                  <div class="slide-overlay">
+                    <h2>Thiago PZK</h2>
+                    <button id="cuatro">
+                      Escuchar ahora <i class="fa-solid fa-circle-play"></i>
+                    </button>
                   </div>
                 </div>
-                <div class="song-title">
-                  <h2>Canser cxp</h2>
-                  <p>Canserbero</p>
-                </div>
-                <span>1:09</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Canserbero%20-%20Maquiav%C3%A9lico%20(Video%20Oficial).mp3">
+                <div class="swiper-slide">
                   <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
+                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/linkin.jpg" />
+                  <div class="slide-overlay">
+                    <h2>Linkin Park</h2>
+                    <button id="cinco">
+                      Escuchar ahora <i class="fa-solid fa-circle-play"></i>
+                    </button>
                   </div>
                 </div>
-                <div class="song-title">
-                  <h2>Maquiavélico</h2>
-                  <p>Canserbero</p>
-                </div>
-                <span>4:55</span>
               </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Canserbero%20%20Querer%20Querernos%20(Versi%C3%B3n%20Ac%C3%BAstica).m4a">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Querer Querernos</h2>
-                  <p>Canserbero</p>
-                </div>
-                <span>3:58</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Cuando%20vayas%20conmigo%20-%20Canserbero.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Cuando vayas conmigo</h2>
-                  <p>Canserbero</p>
-                </div>
-                <span>3:28</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/DJ%20BoBo%20-%20Let%20The%20Dream%20Come%20True%20(Official%20Audio).mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Let The Dream Come True</h2>
-                  <p>DJ Bobo</p>
-                </div>
-                <span>4:01</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Emi%20Not%20Afraid.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Not Afraid</h2>
-                  <p>Eminem</p>
-                </div>
-                <span>5:23</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Enanitos%20Verdes%20-%20Tu%20Carcel%20(En%20Vivo%20Desde%20Mexico%202004).mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Tu Carcel (En Vivo)</h2>
-                  <p>Enanitos Verdes</p>
-                </div>
-                <span>4:05</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Entre%20nosotros%20-%20Tiago%20pzk.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Entre nosotros</h2>
-                  <p>Tiago PZK</p>
-                </div>
-                <span>3:28</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Eros%20Ramazzotti%20-%20Otra%20como%20t%C3%BA%20%3B%20Letra.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Otra como tú</h2>
-                  <p>Eros Ramazzotti</p>
-                </div>
-                <span>4:42</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/In%20The%20End%20%5BOfficial%20HD%20Music%20Video%5D%20-%20Linkin%20Park.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>In The End</h2>
-                  <p>Linkin Park</p>
-                </div>
-                <span>3:38</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/JAY-Z%20-%20Empire%20State%20Of%20Mind%20ft.%20Alicia%20Keys.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Empire State Of Mind</h2>
-                  <p>JAY-Z ft. Alicia Keys</p>
-                </div>
-                <span>4:41</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/John%20Newman%20-%20Love%20Me%20Again.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Love Me Again</h2>
-                  <p>John Newman</p>
-                </div>
-                <span>3:55</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/KHEA%20%20BZRP%20Music%20Sessions%2034.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>BZRP Music Sessions 34</h2>
-                  <p>KHEA</p>
-                </div>
-                <span>3:21</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/KHEA%20-%20Creo%20Que%20ft.%20Asan%20(Official%20Animated%20Video).mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Creo Que</h2>
-                  <p>KHEA ft. Asan</p>
-                </div>
-                <span>3:51</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Khea%20-%20Loca%20ft.%20Duki%20%26%20Cazzu%20(Prod.%20Omar%20Varela%20%26%20Mykka)-MUEVA%20Records.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Loca</h2>
-                  <p>KHEA ft. Duki & Cazzu</p>
-                </div>
-                <span>3:42</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Lamento%20Boliviano.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Lamento Boliviano</h2>
-                  <p>Enanitos Verdes</p>
-                </div>
-                <span>3:42</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Mujer%20Amante%20--%20Rata%20Blanca%20(Letra)%20Video.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Mujer Amante</h2>
-                  <p>Rata Blanca</p>
-                </div>
-                <span>5:51</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Nek%20-%20Laura%20no%20est%C3%A1.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Laura no está</h2>
-                  <p>Nek</p>
-                </div>
-                <span>3:58</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Numb%20(Official%20Music%20Video)%20%5B4K%20UPGRADE%5D%20%E2%80%93%20Linkin%20Park.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Numb</h2>
-                  <p>Linkin Park</p>
-                </div>
-                <span>3:07</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Paulo%20Londra%20-%20The%20World%20is%20Yours%20to%20Take%20%20cancion%20para%20el%20mundial.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>The World is Yours to Take</h2>
-                  <p>Paulo Londra</p>
-                </div>
-                <span>2:46</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Paulo%20Londra%20ft%20Lenny%20Tavarez%20-%20Nena%20Maldicion%20(Official%20Video)-Paulo%20Londra(1667245874215).mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Nena Maldición</h2>
-                  <p>Paulo Londra ft. Lenny Tavarez</p>
-                </div>
-                <span>4:32</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Por%20Mil%20Noches%20-%20Airbag.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Por Mil Noches</h2>
-                  <p>Airbag</p>
-                </div>
-                <span>4:55</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Rata%20Blanca%20-%20A%C3%BAn%20est%C3%A1s%20en%20mis%20sue%C3%B1os%20(video%20oficial).mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Aún estás en mis sueños</h2>
-                  <p>Rata Blanca</p>
-                </div>
-                <span>5:00</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/The%20Black%20Eyed%20Peas%20-%20Where%20Is%20The%20Love%20(Official%20Music%20Video).mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>Where Is The Love</h2>
-                  <p>The Black Eyed Peas</p>
-                </div>
-                <span>4:10</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/This%20is%20you%20for%20you%20%E2%9D%A4%EF%B8%8Frip%20dad-YUNG%20CITY.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>This is for you 💔 rip dad</h2>
-                  <p>YUNG CITY</p>
-                </div>
-                <span>0:28</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/y2mate.com%20-%20QUEVEDO%20%20BZRP%20Music%20Sessions%2052.mp3">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>BZRP Music Sessions 52</h2>
-                  <p>QUEVEDO</p>
-                </div>
-                <span>3:23</span>
-              </div>
-
-              <div class="song">
-                <div class="song-img"
-                  data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/YUNG%20BEEF%20-%20METALLICA%20(VIDEO%20OFICIAL).m4a">
-                  <img
-                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
-                    alt="Logo Music" />
-                  <div class="overlay">
-                    <i class="fa-solid fa-play"></i>
-                  </div>
-                </div>
-                <div class="song-title">
-                  <h2>METALLICA</h2>
-                  <p>YUNG BEEF</p>
-                </div>
-                <span>3:45</span>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <!-- Music player -->
-        <div class="music-player">
-          <div class="music-info">
-            <h2>Shaka Laka</h2>
-            <p>6ix9ine</p>
-          </div>
-          <div class="music-player-row">
-            <div class="album-cover">
-              <img src="resources/img/logo_music.png" id="rotatingImage" alt="Album cover" />
-              <span class="point"></span>
-            </div>
-            <div class="progress-container">
-              <span id="current-time">0:00</span>
-              <input type="range" value="0" id="progress" />
-              <span id="duration">0:00</span>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
 
+          <div class="right-content">
+            <!-- Buscador -->
+            <div class="search-bar">
+              <input type="text" id="songSearch" />
+              <i class="fa fa-search search-icon" aria-hidden="true"></i>
+            </div>
+            <div id="autocomplete-list" class="autocomplete-items"></div> <!-- Lista de autocompletado -->
+            <div class="recommended-songs">
+              <h1>Canciones <h1 class="amarillo">recomendadas</h1>
+              </h1>
+              <div class="song-container">
 
-          <div class="controls">
-            <button class="backward">
-              <i class="fa-solid fa-backward"></i>
-            </button>
-            <button class="play-pause-btn">
-              <i class="fa-solid fa-play" id="controlIcon"></i>
-            </button>
-            <button class="forward">
-              <i class="fa-solid fa-forward"></i>
-            </button>
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/6ix9ine%20-%20Shaka%20Laka%20(feat.%20Kodak%20Black%20%26%20Yailin%20la%20Mas%20Viral)%20(Official%20Music%20Video).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Shaka Laka</h2>
+                    <p>6ix9ine</p>
+                  </div>
+                  <span>2:56</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/%E2%80%A2%20Cicatrices%20-%20AIRBAG%20__%20Letra%20_%20HD%20-%20Mariel%20%E2%98%85.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Cicatrices</h2>
+                    <p>Airbag</p>
+                  </div>
+                  <span>3:48</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/C.R.O%20%20BZRP%20Music%20Sessions%2029.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>BZRP Music Sessions 29</h2>
+                    <p>C.R.O</p>
+                  </div>
+                  <span>2:29</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Cans%C3%A9r%20cxp.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Canser cxp</h2>
+                    <p>Canserbero</p>
+                  </div>
+                  <span>1:09</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Canserbero%20-%20Maquiav%C3%A9lico%20(Video%20Oficial).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Maquiavélico</h2>
+                    <p>Canserbero</p>
+                  </div>
+                  <span>4:55</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Canserbero%20%20Querer%20Querernos%20(Versi%C3%B3n%20Ac%C3%BAstica).m4a">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Querer Querernos</h2>
+                    <p>Canserbero</p>
+                  </div>
+                  <span>3:58</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Cuando%20vayas%20conmigo%20-%20Canserbero.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Cuando vayas conmigo</h2>
+                    <p>Canserbero</p>
+                  </div>
+                  <span>3:28</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/DJ%20BoBo%20-%20Let%20The%20Dream%20Come%20True%20(Official%20Audio).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Let The Dream Come True</h2>
+                    <p>DJ Bobo</p>
+                  </div>
+                  <span>4:01</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Emi%20Not%20Afraid.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Not Afraid</h2>
+                    <p>Eminem</p>
+                  </div>
+                  <span>5:23</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Enanitos%20Verdes%20-%20Tu%20Carcel%20(En%20Vivo%20Desde%20Mexico%202004).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Tu Carcel (En Vivo)</h2>
+                    <p>Enanitos Verdes</p>
+                  </div>
+                  <span>4:05</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Entre%20nosotros%20-%20Tiago%20pzk.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Entre nosotros</h2>
+                    <p>Tiago PZK</p>
+                  </div>
+                  <span>3:28</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Eros%20Ramazzotti%20-%20Otra%20como%20t%C3%BA%20%3B%20Letra.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Otra como tú</h2>
+                    <p>Eros Ramazzotti</p>
+                  </div>
+                  <span>4:42</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/In%20The%20End%20%5BOfficial%20HD%20Music%20Video%5D%20-%20Linkin%20Park.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>In The End</h2>
+                    <p>Linkin Park</p>
+                  </div>
+                  <span>3:38</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/JAY-Z%20-%20Empire%20State%20Of%20Mind%20ft.%20Alicia%20Keys.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Empire State Of Mind</h2>
+                    <p>JAY-Z ft. Alicia Keys</p>
+                  </div>
+                  <span>4:41</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/John%20Newman%20-%20Love%20Me%20Again.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Love Me Again</h2>
+                    <p>John Newman</p>
+                  </div>
+                  <span>3:55</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/KHEA%20%20BZRP%20Music%20Sessions%2034.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>BZRP Music Sessions 34</h2>
+                    <p>KHEA</p>
+                  </div>
+                  <span>3:21</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/KHEA%20-%20Creo%20Que%20ft.%20Asan%20(Official%20Animated%20Video).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Creo Que</h2>
+                    <p>KHEA ft. Asan</p>
+                  </div>
+                  <span>3:51</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Khea%20-%20Loca%20ft.%20Duki%20%26%20Cazzu%20(Prod.%20Omar%20Varela%20%26%20Mykka)-MUEVA%20Records.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Loca</h2>
+                    <p>KHEA ft. Duki & Cazzu</p>
+                  </div>
+                  <span>3:42</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Lamento%20Boliviano.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Lamento Boliviano</h2>
+                    <p>Enanitos Verdes</p>
+                  </div>
+                  <span>3:42</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Mujer%20Amante%20--%20Rata%20Blanca%20(Letra)%20Video.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Mujer Amante</h2>
+                    <p>Rata Blanca</p>
+                  </div>
+                  <span>5:51</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Nek%20-%20Laura%20no%20est%C3%A1.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Laura no está</h2>
+                    <p>Nek</p>
+                  </div>
+                  <span>3:58</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Numb%20(Official%20Music%20Video)%20%5B4K%20UPGRADE%5D%20%E2%80%93%20Linkin%20Park.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Numb</h2>
+                    <p>Linkin Park</p>
+                  </div>
+                  <span>3:07</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Paulo%20Londra%20-%20The%20World%20is%20Yours%20to%20Take%20%20cancion%20para%20el%20mundial.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>The World is Yours to Take</h2>
+                    <p>Paulo Londra</p>
+                  </div>
+                  <span>2:46</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Paulo%20Londra%20ft%20Lenny%20Tavarez%20-%20Nena%20Maldicion%20(Official%20Video)-Paulo%20Londra(1667245874215).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Nena Maldición</h2>
+                    <p>Paulo Londra ft. Lenny Tavarez</p>
+                  </div>
+                  <span>4:32</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Por%20Mil%20Noches%20-%20Airbag.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Por Mil Noches</h2>
+                    <p>Airbag</p>
+                  </div>
+                  <span>4:55</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Rata%20Blanca%20-%20A%C3%BAn%20est%C3%A1s%20en%20mis%20sue%C3%B1os%20(video%20oficial).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Aún estás en mis sueños</h2>
+                    <p>Rata Blanca</p>
+                  </div>
+                  <span>5:00</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/The%20Black%20Eyed%20Peas%20-%20Where%20Is%20The%20Love%20(Official%20Music%20Video).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Where Is The Love</h2>
+                    <p>The Black Eyed Peas</p>
+                  </div>
+                  <span>4:10</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/This%20is%20you%20for%20you%20%E2%9D%A4%EF%B8%8Frip%20dad-YUNG%20CITY.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>This is for you 💔 rip dad</h2>
+                    <p>YUNG CITY</p>
+                  </div>
+                  <span>0:28</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/y2mate.com%20-%20QUEVEDO%20%20BZRP%20Music%20Sessions%2052.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>BZRP Music Sessions 52</h2>
+                    <p>QUEVEDO</p>
+                  </div>
+                  <span>3:23</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/YUNG%20BEEF%20-%20METALLICA%20(VIDEO%20OFICIAL).m4a">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>METALLICA</h2>
+                    <p>YUNG BEEF</p>
+                  </div>
+                  <span>3:45</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/2%C2%B0%20instrumental%20Sudametrica%20Cypher%20Trap%20Kodigo%20%2B%20descarga.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>2º instrumental Sudametrica Cypher Trap Kodigo</h2>
+                    <p>Canserbero</p>
+                  </div>
+                  <span>3:51</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/6IX9INE%20Gotti%20(WSHH%20Exclusive%20-%20Official%20Music%20Video).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>6IX9INE Gotti</h2>
+                    <p>6IX9INE</p>
+                  </div>
+                  <span>4:13</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Canserbero - Jeremías 175 (VIDEO OFICIAL).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Jeremías 175 (VIDEO OFICIAL)</h2>
+                    <p>Canserbero</p>
+                  </div>
+                  <span>5:26</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Canserbero - Mucho gusto Letra.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Mucho gusto Letra</h2>
+                    <p>Canserbero</p>
+                  </div>
+                  <span>4:12</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Canserbero X Apache_Ready.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Canserbero X Apache_Ready</h2>
+                    <p>Canserbero</p>
+                  </div>
+                  <span>1:30</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/DJ BoBo - EVERYBODY - 1994.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>EVERYBODY - 1994</h2>
+                    <p>DJ BoBo</p>
+                  </div>
+                  <span>3:50</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/El paria - Te Quise ( letra )  HD.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Te Quise (letra)</h2>
+                    <p>El paria</p>
+                  </div>
+                  <span>3:31</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Es épico-Canserbero (Video).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Es épico (Video)</h2>
+                    <p>Canserbero</p>
+                  </div>
+                  <span>6:02</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Foyone feat. Akapellah  Presidentes.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Presidentes</h2>
+                    <p>Foyone feat. Akapellah</p>
+                  </div>
+                  <span>3:06</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/FRIJO  BZRP Music Sessions 10.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>BZRP Music Sessions 10</h2>
+                    <p>FRIJO</p>
+                  </div>
+                  <span>2:09</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Junto al Amanecer.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Junto al Amanecer</h2>
+                    <p>J Alvarez</p>
+                  </div>
+                  <span>4:11</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/KHEA%20-%20Ayer%20Me%20LLam%C3%B3%20Mi%20Ex%20ft.%20Lenny%20Santos%20(Official%20Video)%20%23AMLME-KHEA.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Ayer Me Llamó Mi Ex ft. Lenny Santos</h2>
+                    <p>KHEA</p>
+                  </div>
+                  <span>2:58</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/KHEA - Mami lo Siento (Official Video) VYFT.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Mami lo Siento</h2>
+                    <p>KHEA</p>
+                  </div>
+                  <span>2:58</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/La%20Forma%20En%20Que%20Me%20Miras%20-%20Super%20Yei%20x%20Myke%20Towers%20x%20Sammy%20x%20Lenny%20Tavarez%20x%20Rafa%20Pabon.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>La Forma En Que Me Miras</h2>
+                    <p>Super Yei x Myke Towers x Sammy x Lenny Tavarez x Rafa</p>
+                  </div>
+                  <span>5:03</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/La%20Ocasi%C3%B3n%20%20%20De%20La%20Ghetto%2C%20Arcangel%2COzuna%2CAnuel%20Aa%20Letra%20Original.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>La Ocasión</h2>
+                    <p>De La Ghetto, Arcangel, Ozuna, Anuel Aa</p>
+                  </div>
+                  <span>5:35</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Lambo_%20Monkey%20X%20C.R.O.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Lambo_Monkey</h2>
+                    <p>C.R.O</p>
+                  </div>
+                  <span>1:49</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Lo Aprendido - Norick - Alma, Corazón Y vida - (oficial).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Lo Aprendido</h2>
+                    <p>Norick</p>
+                  </div>
+                  <span>3:20</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Meñiques.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Meñiques</h2>
+                    <p>Norick</p>
+                  </div>
+                  <span>3:21</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/mi madre llora santa fe.wav">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Mi madre llora</h2>
+                    <p>Santa Fe</p>
+                  </div>
+                  <span>0:59</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/modern-talking-brother-louie-98-video-new-version.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Brother Louie '98 (New Version)</h2>
+                    <p>Modern Talking</p>
+                  </div>
+                  <span>3:28</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Movimiento Original - Grandes Pasos.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Grandes Pasos</h2>
+                    <p>Movimiento Original</p>
+                  </div>
+                  <span>3:39</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Quién Diría (feat. Norick).m4a">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Quién Diría</h2>
+                    <p>Norick</p>
+                  </div>
+                  <span>2:95</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/RapperSchool-UNITY-(VideoOficial)_76.m4a">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>UNITY</h2>
+                    <p>RapperSchool</p>
+                  </div>
+                  <span>4:42</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Rapsusklei%20%20Canserbero-%20Dando%20Y%20Perdiendo%20(letra).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Dando Y Perdiendo (letra)</h2>
+                    <p>Rapsusklei con Canserbero</p>
+                  </div>
+                  <span>3:14</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Soda Stereo - De Música Ligera (Official Video).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>De Música Ligera (Official Video)</h2>
+                    <p>Soda Stereo</p>
+                  </div>
+                  <span>3:30</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Stupid love story Canserbero (Letra).mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Stupid love story (Letra)</h2>
+                    <p>Canserbero</p>
+                  </div>
+                  <span>4:16</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/techno-ice-mc-think-about-the-way.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Think About the Way</h2>
+                    <p>Ice Mc</p>
+                  </div>
+                  <span>4:18</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Trueno%20ft_FEEL%20ME_.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>FEEL ME</h2>
+                    <p>Trueno</p>
+                  </div>
+                  <span>3:50</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Trueno, Nicki Nicole, Bizarrap - MAMICHULA.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>MAMICHULA</h2>
+                    <p>Trueno, Nicki Nicole, Bizarrap</p>
+                  </div>
+                  <span>3:38</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Warrior%20-%20Dias%20Tristes%20(Con%20Letra)%20--%20PlUtUz.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Dias Tristes (Con Letra)</h2>
+                    <p>Warrior</p>
+                  </div>
+                  <span>3:50</span>
+                </div>
+
+                <div class="song">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/yt1s.com%20-%20Warrior%20%20Dj%20Deportado%20%20Chico%20bueno%20mundo%20malo%20%20Cl%C3%A1sico%20%20Homenaje%20a%20Raper%20One%20%20Cypher%202021.mp3">
+                    <img
+                      src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                      alt="Logo Music" />
+                    <div class="overlay">
+                      <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="status-icon">
+                      <i class="fa-solid fa-pause"></i>
+                    </div>
+                  </div>
+                  <div class="song-title">
+                    <h2>Warrior Dj Deportado</h2>
+                    <p>Warrior</p>
+                  </div>
+                  <span>8:46</span>
+                </div>
+
+
+              </div>
+            </div>
           </div>
-        </div>
+          <!-- Music player -->
+          <div class="music-player">
+            <div class="music-info">
+              <h2>Shaka Laka</h2>
+              <p>6ix9ine</p>
+              <img
+                src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/ecualizador.gif"
+                id="music-gif" alt="Music ecualizador" aria-hidden="true" />
+            </div>
+            <div class="music-player-row">
+              <div class="album-cover">
+                <img
+                  src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
+                  id="rotatingImage" alt="Album cover" />
+                <span class="point"></span>
+              </div>
+              <div class="progress-container">
+                <span id="current-time">0:00</span>
+                <input type="range" value="0" id="progress" />
+                <span id="duration">0:00</span>
+              </div>
+            </div>
+
+            <div class="controls">
+              <button class="backward">
+                <i class="fa-solid fa-backward"></i>
+              </button>
+              <button class="play-pause-btn">
+                <i class="fa-solid fa-play" id="controlIcon"></i>
+              </button>
+              <button class="forward">
+                <i class="fa-solid fa-forward"></i>
+              </button>
+            </div>
+          </div>
 
     </section>
   </main>

@@ -2,22 +2,28 @@
 document.getElementById('loader').addEventListener('click', function () {
   // Oculta el loader
   this.style.display = 'none';
-  const randomIndex = Math.floor(Math.random() * 61); 
-   // Selecciona el elemento basado en el índice aleatorio
-   const songElements = document.querySelectorAll('.song-img');
-  
-   // Verifica que el índice aleatorio esté dentro del rango de elementos disponibles
-   if (randomIndex < songElements.length) {
-     songElements[randomIndex].click();
-   } else {
-     console.log('El índice generado está fuera del rango de elementos disponibles.');
-   }
+  const randomIndex = Math.floor(Math.random() * 61);
+  // Selecciona el elemento basado en el índice aleatorio
+  const songElements = document.querySelectorAll('.song-img');
+
+  // Verifica que el índice aleatorio esté dentro del rango de elementos disponibles
+  if (randomIndex < songElements.length) {
+    songElements[randomIndex].click();
+
+    //mover el valor del scrol hacia la posicion de la cancion
+    songElements[randomIndex].scrollIntoView({
+      behavior: 'smooth',  // Transición suave
+      block: 'center'      // Centrar el elemento en el contenedor
+    });
+
+  } else {
+    console.log('El índice generado está fuera del rango de elementos disponibles.');
+  }
 });
 //loader para celular
 
 const navItems = document.querySelectorAll(".nav-item");
-
-// Manejar clic en los elementos de navegación
+// Manejar clic en los elementos de navegación del nav
 navItems.forEach((navItem) => {
   navItem.addEventListener("click", () => {
     navItems.forEach((item) => {
@@ -98,6 +104,7 @@ function updateSongInfo(src, title = "", artist = "", cover = "") {
   controlIcon.classList.add("fa-pause");
   controlIcon.classList.remove("fa-play");
   startRotation();
+
 }
 
 /// Función para actualizar el estado de la canción actual en la lista
@@ -329,13 +336,21 @@ function playPause() {
 playPauseButton.addEventListener("click", playPause);
 forwardButton.addEventListener("click", forwardSong);
 backwardButton.addEventListener("click", backwardSong);
+
 function forwardSong() {
   // Cambiar a imagen estática al adelantar
   gifElement.src = staticImageSrc;
+  const songElements = document.querySelectorAll('.song-img');
 
   // Cambiar la canción inmediatamente
   currentSongIndex = (currentSongIndex + 1) % document.querySelectorAll('.song-img').length;
   document.querySelectorAll('.song-img')[currentSongIndex].click();
+
+  //ajustar posicion scrol
+  songElements[currentSongIndex].scrollIntoView({
+    behavior: 'smooth',  // Transición suave
+    block: 'center'      // Centrar el elemento en el contenedor
+  });
 
   // Restaurar GIF después de 2 segundos
   setTimeout(() => {
@@ -346,33 +361,23 @@ function forwardSong() {
 function backwardSong() {
   // Cambiar a imagen estática al retroceder
   gifElement.src = staticImageSrc;
+  const songElements = document.querySelectorAll('.song-img');
 
   // Cambiar la canción inmediatamente
   currentSongIndex = (currentSongIndex - 1 + document.querySelectorAll('.song-img').length) % document.querySelectorAll('.song-img').length;
   document.querySelectorAll('.song-img')[currentSongIndex].click();
+
+  //ajustar posicion scrol
+  songElements[currentSongIndex].scrollIntoView({
+    behavior: 'smooth',  // Transición suave
+    block: 'center'      // Centrar el elemento en el contenedor
+  });
 
   // Restaurar GIF después de 1 segundos
   setTimeout(() => {
     gifElement.src = originalGifSrc; // Restaurar GIF
   }, 500);
 }
-
-// Iniciar con una cancion aleatoria
-window.addEventListener('load', function () {
-  // Verifica si la acción ya se ha realizado
-  if (!localStorage.getItem('randomSongPlayed')) {
-    const randomIndex = Math.floor(Math.random() * 61);
-    const songImgs = document.querySelectorAll('.song-img');
-    
-    if (songImgs[randomIndex]) {
-      songImgs[randomIndex].click();
-    }
-    
-    // Marca la acción como realizada en el almacenamiento local
-    localStorage.setItem('randomSongPlayed', 'true');
-  }
-});
-// Iniciar con una cancion aleatoria
 
 //POPULAR PLAYLIST
 var swiper = new Swiper(".swiper", {
@@ -398,6 +403,44 @@ var swiper = new Swiper(".swiper", {
     el: ".swiper-pagination",
   },
 });
+
+// Mapa de índices de canción a índice de slide
+const songToSlideIndex = {
+  'uno': 1,
+  'dos': 5,
+  'tres': 8,
+  'cuatro': 10,
+  'cinco': 12
+};
+
+// Maneja el clic en las imágenes de canciones
+document.querySelectorAll('.song').forEach((song) => {
+  song.addEventListener('click', function () {
+    const songId = song.getAttribute('data-song-id');
+    if (songId) {
+      console.log(`Clicked song ID: ${songId}`);
+      const slideIndex = songToSlideIndex[songId];
+      console.log(`Corresponding slide index: ${slideIndex}`);
+
+      if (slideIndex !== undefined) {
+        // Encuentra el índice del slide que corresponde al índice de la canción
+        const swiperSlideIndex = [...document.querySelectorAll('.swiper-slide')].findIndex(slide => parseInt(slide.getAttribute('data-index')) === slideIndex);
+        console.log(`Swiper slide index: ${swiperSlideIndex}`);
+
+        if (swiperSlideIndex !== -1) {
+          swiper.slideTo(swiperSlideIndex, 600, true);
+        } else {
+          console.error(`Slide with index ${slideIndex} not found.`);
+        }
+      } else {
+        console.error(`Song ID ${songId} not found in songToSlideIndex.`);
+      }
+    } else {
+      console.error('No data-song-id attribute found.');
+    }
+  });
+});
+
 // CONFIGURAR LA IMAGEN COMO DJ
 const albumCover = document.querySelector('.album-cover');
 const image = albumCover.querySelector('img');
@@ -571,6 +614,14 @@ function handleClick(buttonId) {
     document.querySelectorAll('.song-img')[songIndex].click(); // Simula el clic en la imagen de la canción para reproducir
     updateButtonIcon(button, true);
     buttonStates[buttonId] = true; // Actualiza el estado
+    
+    const songElements = document.querySelectorAll('.song-img');
+    //ajustar posicion del scrol
+    songElements[songIndex].scrollIntoView({
+      behavior: 'smooth',  // Transición suave
+      block: 'center'      // Centrar el elemento en el contenedor
+    });
+
   }
 }
 
@@ -682,10 +733,17 @@ const songs = [
 
 const searchInput = document.getElementById("songSearch");
 const autocompleteList = document.getElementById("autocomplete-list");
+const songContainer = document.querySelector('.song-container');
+// Muestra todas las canciones y oculta la lista de autocompletado
+function showAllSongs() {
+  songContainer.querySelectorAll('.song').forEach(song => {
+    song.style.display = ''; // Restaurar visibilidad
+  });
+}
 
 searchInput.addEventListener("input", function () {
   const input = this.value.toLowerCase();
-  autocompleteList.innerHTML = ""; // Clear previous suggestions
+  autocompleteList.innerHTML = ""; // Limpiar las sugerencias anteriores
 
   if (input.length > 0) {
     songs.forEach(song => {
@@ -693,10 +751,32 @@ searchInput.addEventListener("input", function () {
         const songDiv = document.createElement("div");
         songDiv.textContent = song.title;
 
-        // Handle click on the song selection
+        // Manejar el clic en la canción seleccionada
         songDiv.addEventListener("click", function () {
-          // Use the songIndex to simulate the click on the corresponding song element
-          document.querySelectorAll('.song-img')[song.songIndex].click();
+          const songElements = document.querySelectorAll('.song-img');
+
+          // Verifica si el índice de la canción está dentro del rango
+          if (song.songIndex < songElements.length) {
+            const selectedSongElement = songElements[song.songIndex];
+
+            // Simula el clic en el elemento correspondiente
+            showAllSongs()
+            selectedSongElement.click();
+
+            // Desplaza el contenedor para que la canción sea visible
+            selectedSongElement.scrollIntoView({
+              behavior: 'smooth',  // Desplazamiento suave
+              block: 'center'      // Centrar el elemento en el contenedor
+            });
+
+            // Limpiar el campo de búsqueda
+            searchInput.value = "";
+            // Limpiar la lista de autocompletado después de seleccionar una canción
+            autocompleteList.innerHTML = "";
+
+          } else {
+            console.error("Índice de canción fuera de rango");
+          }
         });
 
         autocompleteList.appendChild(songDiv);
@@ -705,10 +785,10 @@ searchInput.addEventListener("input", function () {
   }
 });
 
-// Close the autocomplete list when clicking outside
+// Cerrar la lista de autocompletar al hacer clic fuera
 document.addEventListener("click", function (e) {
   if (!e.target.matches("#songSearch")) {
-    autocompleteList.innerHTML = "";  // Clear the list when clicked outside
+    autocompleteList.innerHTML = ""; // Limpiar la lista al hacer clic fuera
   }
 });
 //Autocomplete

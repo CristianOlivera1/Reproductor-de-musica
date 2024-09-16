@@ -1,26 +1,25 @@
-//loader para celular
+//loader para celular y pc
 document.getElementById('loader').addEventListener('click', function () {
   // Oculta el loader
   this.style.display = 'none';
-  const randomIndex = Math.floor(Math.random() * 61);
   // Selecciona el elemento basado en el índice aleatorio
   const songElements = document.querySelectorAll('.song-img');
-
+  const randomIndex = Math.floor(Math.random() * 61);
   // Verifica que el índice aleatorio esté dentro del rango de elementos disponibles
   if (randomIndex < songElements.length) {
-    songElements[randomIndex].click();
 
     //mover el valor del scrol hacia la posicion de la cancion
     songElements[randomIndex].scrollIntoView({
       behavior: 'smooth',  // Transición suave
       block: 'center'      // Centrar el elemento en el contenedor
     });
+    songElements[randomIndex].click();
 
   } else {
     console.log('El índice generado está fuera del rango de elementos disponibles.');
   }
 });
-//loader para celular
+//loader para celular y pc
 
 const navItems = document.querySelectorAll(".nav-item");
 // Manejar clic en los elementos de navegación del nav
@@ -33,7 +32,7 @@ navItems.forEach((navItem) => {
   });
 });
 
-// Activar el botón por defecto al cargar la página
+// Activar el botón por defecto de lnav al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
   const defaultActiveItem = document.querySelector(".nav-item.active");
   if (defaultActiveItem) {
@@ -385,7 +384,7 @@ var swiper = new Swiper(".swiper", {
   grabCursor: true,
   centeredSlides: true,
   loop: true,
-  speed: 600,
+  speed: 1200,
   slidesPerView: "auto",
   coverflowEffect: {
     rotate: 10,
@@ -410,33 +409,38 @@ const songToSlideIndex = {
   'dos': 5,
   'tres': 8,
   'cuatro': 10,
-  'cinco': 12
+  'cinco': 12,
+  'default': 13 // Índice del slide por defecto
 };
-
-// Maneja el clic en las imágenes de canciones
+// Maneja el clic en el cuerpo de canciones
 document.querySelectorAll('.song').forEach((song) => {
   song.addEventListener('click', function () {
     const songId = song.getAttribute('data-song-id');
+    let slideIndex;
+
     if (songId) {
       console.log(`Clicked song ID: ${songId}`);
-      const slideIndex = songToSlideIndex[songId];
+      slideIndex = songToSlideIndex[songId];
       console.log(`Corresponding slide index: ${slideIndex}`);
+    } else {
+      // Redirige al slide por defecto cuando no hay data-song-id
+      console.log('No data-song-id attribute found, redirecting to default slide.');
+      slideIndex = songToSlideIndex['default'];
+      console.log(`Default slide index: ${slideIndex}`);
+    }
+    if (slideIndex !== undefined) {
+      // Encuentra el índice del slide que corresponde al índice de la canción
+      const swiperSlideIndex = [...document.querySelectorAll('.swiper-slide')]
+        .findIndex(slide => parseInt(slide.getAttribute('data-index')) === slideIndex);
+      console.log(`Swiper slide index: ${swiperSlideIndex}`);
 
-      if (slideIndex !== undefined) {
-        // Encuentra el índice del slide que corresponde al índice de la canción
-        const swiperSlideIndex = [...document.querySelectorAll('.swiper-slide')].findIndex(slide => parseInt(slide.getAttribute('data-index')) === slideIndex);
-        console.log(`Swiper slide index: ${swiperSlideIndex}`);
-
-        if (swiperSlideIndex !== -1) {
-          swiper.slideTo(swiperSlideIndex, 600, true);
-        } else {
-          console.error(`Slide with index ${slideIndex} not found.`);
-        }
+      if (swiperSlideIndex !== -1) {
+        swiper.slideTo(swiperSlideIndex, 1200, true);
       } else {
-        console.error(`Song ID ${songId} not found in songToSlideIndex.`);
+        console.error(`Slide with index ${slideIndex} not found.`);
       }
     } else {
-      console.error('No data-song-id attribute found.');
+      console.error(`Slide index ${slideIndex} is undefined.`);
     }
   });
 });
@@ -731,6 +735,7 @@ const songs = [
   { title: "Warrior Dj Deportado - Warrior - 3:50", songIndex: 60 }
 ];
 
+//Autocompletador y scrol responsivo al seleccionar una cancion
 const searchInput = document.getElementById("songSearch");
 const autocompleteList = document.getElementById("autocomplete-list");
 const songContainer = document.querySelector('.song-container');
@@ -759,15 +764,21 @@ searchInput.addEventListener("input", function () {
           if (song.songIndex < songElements.length) {
             const selectedSongElement = songElements[song.songIndex];
 
-            // Simula el clic en el elemento correspondiente
-            showAllSongs()
-            selectedSongElement.click();
+            // muestra todas las canciones
+            showAllSongs();
 
-            // Desplaza el contenedor para que la canción sea visible
-            selectedSongElement.scrollIntoView({
-              behavior: 'smooth',  // Desplazamiento suave
-              block: 'center'      // Centrar el elemento en el contenedor
-            });
+             // Forzar scroll en móviles con un retraso
+            setTimeout(() => {
+              // Desplaza el contenedor para que la canción sea visible
+              selectedSongElement.scrollIntoView({
+                behavior: 'smooth',  // Desplazamiento suave
+                block: 'center'      // Centrar el elemento en el contenedor
+              });
+                     // Simula el clic en el elemento correspondiente
+            selectedSongElement.click();
+               // Enfoca el elemento antes de desplazarlo para asegurar que sea visible
+               selectedSongElement.focus();
+            }, 1000); // Un pequeño retraso (100ms)
 
             // Limpiar el campo de búsqueda
             searchInput.value = "";
@@ -791,4 +802,5 @@ document.addEventListener("click", function (e) {
     autocompleteList.innerHTML = ""; // Limpiar la lista al hacer clic fuera
   }
 });
-//Autocomplete
+
+//Autocompletador y scrol responsivo al seleccionar una cancion

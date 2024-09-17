@@ -318,6 +318,163 @@ main {
   font-size: 14px;
 }
 
+/* Para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000; /* Asegura que el modal esté encima de otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+.modal-content {
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 500px;
+  max-width: 100%;
+  height: 500px;
+  border: 1px solid rgba(203, 203, 202, 0.432);
+  background: linear-gradient(180deg, rgba(203, 203, 202, 0.5) 0%, rgba(10, 10, 10, 0.562) 50%, rgba(15, 15, 15, 0.411) 100%);
+}
+
+.modal-content p {
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: rgb(167, 166, 165);
+  cursor: pointer;
+}
+
+.social-icons {
+  margin-top: 65px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 24px; /* Tamaño del icono */
+  color: rgb(203, 203, 202);
+  width: 40px; /* Tamaño del contenedor */
+  height: 40px; /* Tamaño del contenedor */
+  display: inline-block; /* Para tratarlo como bloque y centrado */
+  text-align: center; /* Para centrar el icono dentro del contenedor */
+  line-height: 40px; /* Para centrar verticalmente el icono */
+  background-color: transparent; /* Fondo inicial transparente */
+  border-radius: 50%; /* Hacer el enlace redondo */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+.social-icons a i {
+  font-size: 30px;
+}
+
+.social-icons a:hover {
+  background-color:rgba(82, 78, 79, 0.788); /* Cambia el fondo al hacer hover */
+  border-radius: 20%; /* Cambia el borde redondeado */
+  transform: scale(1.1); /* Hace el ícono un poco más grande al hacer hover */
+}
+.tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(56, 52, 52);
+  color: rgb(203, 203, 202);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease-out; ;
+}
+.social-icons:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in; 
+}
+.modal-content .descripcion {
+  display: inline-block; /* Asegura que el texto esté en una sola línea */
+  margin: 15px 50px 0 50px;
+  margin-top: 15px;
+  font-size: 15px;
+}
+.modal-content .uni{
+  color: rgb(144, 143, 142);
+}
+  /*animacion de perfil del modal*/
+.image-container-modal {
+  height: 150px;
+  width: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  left: 150px;
+}
+
+/* Imagen dentro del contenedor */
+.image-container-modal img {
+  width: 95%;
+  height: 95%;
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  transition: transform 0.3s ease;
+  z-index: 3;
+  border-radius: 50%;
+}
+
+/* Efecto de escala al pasar el ratón */
+.image-container-modal:hover img {
+  transform: scale(1.1);
+}
+
+/* Efecto de escala al hacer clic en la imagen */
+.image-container-modal img:active {
+  transform: scale(0.95);
+}
+
+/* Animación de rotación del contenedor */
+.image-container-modal::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(rgb(255, 255, 255) 20deg, transparent 120deg);
+  animation: rotar 2s linear infinite;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Fondo semitransparente con sombra */
+.image-container-modal::after {
+  content: "";
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  background-color: rgba(16, 16, 16, 0.8);
+  border-radius: 50%;
+  box-shadow: inset 16px 14px 20px rgba(0, 0, 0, 0.55);
+  z-index: 1; /* Asegura que esté detrás del pseudoelemento ::before */
+}
+    /*animacion de perfil del modal*/
+/*modal*/
+
 .nav-item {
   display: block;
 }
@@ -510,15 +667,25 @@ main {
   text-transform: uppercase;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  transition: all 0.4s linear;
+  transition: all 1s linear;
   cursor: pointer;
+}
+
+/* Añadir especificidad para asegurar que se respeten los estilos dinámicos */
+.slide-overlay button.button-playingslider {
+  background-color: #28a745 !important; /* Verde para reproducción */
+  color: white !important; /* Texto blanco */
+}
+
+.slide-overlay button.button-normalslider {
+  background: #e9e6eb2a !important;
+  color: rgb(250, 204, 21) !important; /* Texto original */
 }
 
 .slide-overlay button:is(:hover, :focus-visible) {
   background: #e9e6eb;
   color: #000;
 }
-
 /*Canciones recomendadas*/
 
 /* RIGHT CONTENT */
@@ -1148,10 +1315,22 @@ main {
     object-fit: cover;
     /* Ajusta la imagen dentro del contenedor */
     position: absolute;
-    margin-left: 100px;
-    margin-top: 20px;
+    margin-left: 65px;
+    margin-top: 5px;
   }
-
+  .album-cover {
+    width: 70px;
+    margin-right: 0;
+  }
+  #progress{
+    height: 3px;
+    
+  }
+  #progress::-webkit-slider-thumb {
+    width: 10px; /* Ancho del círculo */
+    height: 10px; /* Altura del círculo */
+  }
+  
 }
 
 @media (max-width: 910px) {
@@ -1186,10 +1365,6 @@ main {
 
   .song {
     grid-template-columns: 30% auto 12%;
-  }
-
-  .song:nth-child(7) {
-    display: none;
   }
 
 }

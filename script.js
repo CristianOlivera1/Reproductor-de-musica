@@ -585,17 +585,25 @@ const buttonStates = {
   cinco: false
 };
 
-// Función para actualizar el ícono del botón
+// Función para actualizar el icono y el texto del botón
 function updateButtonIcon(button, isPlaying) {
   const icon = button.querySelector('i');
+  
   if (isPlaying) {
     icon.classList.remove('fa-circle-play');
     icon.classList.add('fa-circle-pause');
+    button.innerHTML = 'En reproducción <i class="fa-solid fa-circle-pause"></i>'; // Cambia también el texto
+    button.classList.add('button-playingslider'); // Añade la clase de reproducción
+    button.classList.remove('button-normalslider'); // Elimina la clase normal
   } else {
     icon.classList.remove('fa-circle-pause');
     icon.classList.add('fa-circle-play');
+    button.innerHTML = 'Escuchar ahora <i class="fa-solid fa-circle-play"></i>'; // Restaura el texto original
+    button.classList.add('button-normalslider'); // Añade la clase normal
+    button.classList.remove('button-playingslider'); // Elimina la clase de reproducción
   }
 }
+
 
 // Función para manejar el clic en un botón
 function handleClick(buttonId) {
@@ -802,5 +810,28 @@ document.addEventListener("click", function (e) {
     autocompleteList.innerHTML = ""; // Limpiar la lista al hacer clic fuera
   }
 });
-
 //Autocompletador y scrol responsivo al seleccionar una cancion
+
+//modal
+// Obtener los elementos
+const profileImage = document.getElementById('profileImage');
+const modal = document.getElementById('modal');
+const closeModal = document.querySelector('.close');
+
+// Mostrar el modal al hacer clic en la imagen
+profileImage.addEventListener('click', function () {
+  modal.style.display = 'flex';
+});
+
+// Cerrar el modal al hacer clic en la "X"
+closeModal.addEventListener('click', function () {
+  modal.style.display = 'none';
+});
+
+// Cerrar el modal si se hace clic fuera del contenido
+window.addEventListener('click', function (event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+//modal

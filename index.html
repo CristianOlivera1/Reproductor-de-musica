@@ -5,13 +5,24 @@
   <meta charset="UTF-8">
   <title>Reproductor de musica 🎵🎶</title>
   <meta name="description" content="Reproductor de audio minimalista.">
-  <link rel="icon" type="image/vnd.icon" href="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/favicon.ico">
+  <link rel="icon" type="image/vnd.icon"
+    href="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/favicon2.ico">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#AA00D6">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css'>
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css'>
   <link rel="stylesheet" href="style.css">
   <meta name="google-site-verification" content="oTYQ-SaxDdw9u0YX0-DEmjWspJneBHilD0yTbVhei0c" />
+
+  <meta property="og:title" content="Reproductor de música 🎵🎶">
+  <meta property="og:description" content="Reproductor de audio minimalista con una experiencia elegante y sencilla.">
+  <meta property="og:image" content="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/preview.png">
+  <meta property="og:url" content="https://reproductor-de-musica-coc.vercel.app">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Reproductor de Música">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 </head>
 
 <body>
@@ -23,12 +34,12 @@
   <main>
     <nav class="main-menu">
       <div>
-        
+
         <div class="user-info" id="profileImage">
-            <div class="image-container">
-              <img src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/i_perfil2.png"
-                alt="user" />
-            </div>
+          <div class="image-container">
+            <img src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/i_perfil2.png"
+              alt="user" />
+          </div>
           <p class="amarillo">Cristian</p>
           <p id="apellido">Olivera</p>
         </div>
@@ -39,18 +50,23 @@
             <span class="close">&times;</span>
             <div class="image-container-modal">
               <img src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/i_perfil2.png"
-                   alt="user" class="modal-image" />
+                alt="user" class="modal-image" />
             </div>
-              <p class="amarillo">Cristian</p>
-              <p> Olivera Chávez </p>
-              <p class="descripcion">
-                <span class="amarillo">Estudiante,</span class="uni"> actualmente cursando el 5to Semestre en la Universidad Nacional Micaela Bastidas de Apurímac.
-              </p>
+            <p class="amarillo">Cristian</p>
+            <p class="apell"> Olivera Chávez </p>
+            <p class="descripcion">
+              <span class="amarillo">Estudiante,</span class="uni"> actualmente cursando el <span class="amarillo">5to
+                Semestre </span>en la Universidad Nacional Micaela Bastidas de Apurímac.
+            </p>
             <div class="social-icons">
-              <a href="https://github.com/CristianOlivera1" target="_blank"><i class="fa-brands fa-github"> <span class="tooltip">GitHub</span></i></a>
-              <a href="mailto:221181@unamba.edu.pe" target="_blank"><i class="fa-solid fa-envelope">  <span class="tooltip">Email</span></i></a>
-              <a href="https://www.instagram.com/cristian_olivera_c1/" target="_blank"><i class="fa-brands fa-instagram">  <span class="tooltip">Instagram</span></i></a>
-              <a href="https://wa.me/954306632" target="_blank"><i class="fa-brands fa-whatsapp">  <span class="tooltip">WhatsApp</span></i></a>
+              <a href="https://github.com/CristianOlivera1" target="_blank"><i class="fa-brands fa-github"> <span
+                    class="tooltip">GitHub</span></i></a>
+              <a href="mailto:221181@unamba.edu.pe" target="_blank"><i class="fa-solid fa-envelope"> <span
+                    class="tooltip">Email</span></i></a>
+              <a href="https://www.instagram.com/cristian_olivera_c1/" target="_blank"><i
+                  class="fa-brands fa-instagram"> <span class="tooltip">Instagram</span></i></a>
+              <a href="https://wa.me/954306632" target="_blank"><i class="fa-brands fa-whatsapp"> <span
+                    class="tooltip">WhatsApp</span></i></a>
             </div>
           </div>
         </div>
@@ -59,35 +75,30 @@
           <li class="nav-item active" data-bg="1">
             <a href="#">
               <span class="line-number">1</span>
-              <span class="nav-text">Discover</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="2">
             <a href="#">
               <span class="line-number">2</span>
-              <span class="nav-text">Trending</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="3">
             <a href="#">
               <span class="line-number">3</span>
-              <span class="nav-text">Album</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="4">
             <a href="#">
               <span class="line-number">4</span>
-              <span class="nav-text">Playlist</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="5">
             <a href="#">
               <span class="line-number">5</span>
-              <span class="nav-text">Favorites</span>
             </a>
           </li>
         </ul>
@@ -96,70 +107,60 @@
           <li class="nav-item" data-bg="6">
             <a href="#">
               <span class="line-number">6</span>
-              <span class="nav-text">Profile</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="7">
             <a href="#">
               <span class="line-number">7</span>
-              <span class="nav-text">Settings</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="8">
             <a href="#">
               <span class="line-number">8</span>
-              <span class="nav-text">Logout</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="9">
             <a href="#">
               <span class="line-number">9</span>
-              <span class="nav-text">Logout</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="10">
             <a href="#">
               <span class="line-number">10</span>
-              <span class="nav-text">Logout</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="11">
             <a href="#">
               <span class="line-number">11</span>
-              <span class="nav-text">Logout</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="12">
             <a href="#">
               <span class="line-number">12</span>
-              <span class="nav-text">Logout</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="13">
             <a href="#">
               <span class="line-number">13</span>
-              <span class="nav-text">Logout</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="14">
             <a href="#">
               <span class="line-number">14</span>
-              <span class="nav-text">Logout</span>
             </a>
           </li>
 
           <li class="nav-item" data-bg="15">
             <a href="#">
               <span class="line-number">15</span>
-              <span class="nav-text">Logout</span>
             </a>
           </li>
         </ul>
@@ -232,7 +233,8 @@
                 </div>
 
                 <div class="swiper-slide" data-index="13" id="slide-default">
-                  <img src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/slid.gif" />
+                  <img
+                    src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/slid.gif" />
                   <div class="slide-overlay">
                     <h2>En reproducción ...</h2>
                   </div>
@@ -409,14 +411,15 @@
                     </div>
                   </div>
                   <div class="song-title">
-                   <h2>Let The Dream Come True</h2>
+                    <h2>Let The Dream Come True</h2>
                     <p>DJ Bobo</p>
                   </div>
                   <span>4:01</span>
                 </div>
 
                 <div class="song" data-song-id="tres">
-                  <div class="song-img" data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Emi%20Not%20Afraid.mp3">
+                  <div class="song-img"
+                    data-song-src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/audio/Emi%20Not%20Afraid.mp3">
                     <img
                       src="https://github.com/CristianOlivera1/Reproductor-de-musica/raw/main/resources/img/logo_music.png"
                       alt="Logo Music" />

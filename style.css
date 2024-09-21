@@ -1105,7 +1105,6 @@ main {
   color: rgb(229, 229, 229);
   font-size: 1.5rem;
   padding-bottom: 10px;
-  white-space: nowrap;
   animation: scrollText 8s linear infinite;
   font-style: italic;
   letter-spacing: 0.1em; /* Añadir espacio entre las letras */
@@ -1340,8 +1339,11 @@ main {
     padding-left: 30px;
 
   }
+  .music-info{
+    margin-top: -50px;
+  }
   .music-info h2{
-    margin-top: -40px;
+ 
     font-size: 20px;
   }
 

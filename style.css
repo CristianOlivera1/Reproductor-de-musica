@@ -1088,6 +1088,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .music-info h2, .music-info p {
@@ -1102,10 +1103,26 @@ main {
 
 .music-info h2 {
   color: rgb(229, 229, 229);
+  font-size: 1.5rem;
   padding-bottom: 10px;
+  white-space: nowrap;
+  animation: scrollText 8s linear infinite;
+  font-style: italic;
+  letter-spacing: 0.1em; /* Añadir espacio entre las letras */
+  font-weight: 1000; /* Grosor personalizado de las letras */
 }
 
-
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%); /* Comienza fuera del contenedor por la derecha */
+  }
+  50% {
+    transform: translateX(-10%); /* El texto llega al centro */
+  }
+  100% {
+    transform: translateX(-110%); /* El texto se va por la izquierda */
+  }
+}
 
 .progress-container {
   display: flex;

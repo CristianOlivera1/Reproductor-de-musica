@@ -1123,6 +1123,9 @@ main {
     transform: translateX(-110%); /* El texto se va por la izquierda */
   }
 }
+.music-info h2.paused {
+  animation-play-state: paused; /* Detiene la animación cuando se aplica esta clase */
+}
 
 .progress-container {
   display: flex;

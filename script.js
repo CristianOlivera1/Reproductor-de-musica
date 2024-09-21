@@ -186,9 +186,12 @@ document.querySelectorAll('.song').forEach((songElement, index) => {
           updateButtonIcon(document.getElementById(buttonId), true);
           buttonStates[buttonId] = true;
         }
+          // Reanudar la animación del texto cuando se reproduce la canción
+          textElement.classList.remove('paused');
       }).catch((error) => {
         console.error('Error al reproducir la canción:', error);
       });
+      
 
     } else {
       if (audioPlayer.paused) {
@@ -211,6 +214,8 @@ document.querySelectorAll('.song').forEach((songElement, index) => {
           updateButtonIcon(document.getElementById(buttonId), true);
           buttonStates[buttonId] = true;
         }
+           // Reanudar la animación del texto cuando se reproduce la canción
+         textElement.classList.remove('paused');
       } else {
         audioPlayer.pause();
         songElement.classList.remove('playing');
@@ -231,8 +236,11 @@ document.querySelectorAll('.song').forEach((songElement, index) => {
           updateButtonIcon(document.getElementById(buttonId), false);
           buttonStates[buttonId] = false;
         }
+           // Pausar la animación del texto cuando se detiene la canción
+        textElement.classList.add('paused');
       }
     }
+
   });
 });
 //cambiar icono de play a pause al reproducir o pausar
@@ -313,6 +321,8 @@ function playPause() {
       updateButtonIcon(document.getElementById(buttonId), true);
       buttonStates[buttonId] = true;
     }
+         // Reanudar la animación del texto
+         textElement.classList.remove('paused');
 
   } else {
     // Pausar audio
@@ -329,6 +339,7 @@ function playPause() {
       updateButtonIcon(document.getElementById(buttonId), false);
       buttonStates[buttonId] = false;
     }
+    textElement.classList.add('paused');
   }
 }
 // Eventos de botones de control
@@ -603,7 +614,8 @@ function updateButtonIcon(button, isPlaying) {
     button.classList.remove('button-playingslider'); // Elimina la clase de reproducción
   }
 }
-
+    //detener animacion de desplaxamiento de texto
+const textElement = document.querySelector('.music-info h2');
 
 // Función para manejar el clic en un botón
 function handleClick(buttonId) {
@@ -621,6 +633,8 @@ function handleClick(buttonId) {
     gifElement.src = staticImageSrc; // Cambiar a imagen estática al pausar
     // Actualizar el estado de la canción actual en la lista
     updateCurrentSongState('paused');
+    // Pausar la animación del texto
+    textElement.classList.add('paused');
   } else {
     // Reproducir la canción y actualizar el ícono
     document.querySelectorAll('.song-img')[songIndex].click(); // Simula el clic en la imagen de la canción para reproducir
@@ -633,6 +647,8 @@ function handleClick(buttonId) {
       behavior: 'smooth',  // Transición suave
       block: 'center'      // Centrar el elemento en el contenedor
     });
+      // Reanudar la animación del texto
+   textElement.classList.remove('paused');
 
   }
 }

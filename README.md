@@ -30,4 +30,4 @@ Un reproductor de música minimalista, diseñado para ofrecer una interfaz senci
 3. Abre el archivo `index.html` en tu navegador.
    
 ## 📬 Resultado
-**Página del Proyecto**: [Reproductor-de-musica](https://reproductor-de-musica-coc.vercel.app)
+**Página del Proyecto**:  [![Ver](https://img.shields.io/badge/VER-23facc15?logo=eye)](https://reproductor-de-musica-coc.vercel.app)
